@@ -383,3 +383,43 @@ main { width: min(calc(100% - 28px), var(--max)); margin: 0 auto; }
   .pointer-glow { display: none; }
   .reveal { opacity: 1; transform: none; }
 }
+
+
+/* ---------------------------------------------------------
+   Compact first-screen layout for laptop-height displays
+   Keeps the spacious desktop design on taller screens.
+   --------------------------------------------------------- */
+@media (min-width: 901px) and (max-height: 920px) {
+  .hero {
+    min-height: 0;
+    padding: 30px 0 28px;
+    gap: clamp(28px, 4vw, 64px);
+  }
+
+  .availability {
+    margin-bottom: 20px;
+    padding: 7px 11px;
+  }
+
+  .hero h1 {
+    font-size: clamp(3.3rem, 6.3vw, 6.25rem);
+  }
+
+  .hero-intro {
+    margin-top: 20px;
+  }
+
+  .hero-actions {
+    margin-top: 22px;
+  }
+
+  .orbital-stage {
+    width: min(100%, 440px);
+  }
+
+  .topic-readout {
+    max-width: 400px;
+    margin-top: 0;
+    padding-top: 12px;
+  }
+}
