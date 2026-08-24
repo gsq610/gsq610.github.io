@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Si Qi Goh — AI Safety & Trustworthy AI researcher working on machine unlearning, privacy, and agent safety." />
+  <meta name="theme-color" content="#f3f1ea" />
+  <title>Si Qi Goh · AI Safety & Trustworthy AI</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <div class="pointer-glow" aria-hidden="true"></div>
+  <div class="scroll-progress" aria-hidden="true"><span></span></div>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" aria-label="Site header">
+    <a class="brand" href="#research" aria-label="Si Qi Goh — Research">
+      <span class="brand-mark" aria-hidden="true">SQ</span>
+      <span class="brand-copy">
+        <strong>Si Qi Goh</strong>
+        <small>AI Safety Researcher</small>
+      </span>
+    </a>
+
+    <nav class="tabs" aria-label="Primary navigation" role="tablist">
+      <span class="tab-indicator" aria-hidden="true"></span>
+      <button class="tab-button is-active" id="tab-research" role="tab" aria-selected="true" aria-controls="research" data-tab="research">Research</button>
+      <button class="tab-button" id="tab-experience" role="tab" aria-selected="false" aria-controls="experience" data-tab="experience">Experience</button>
+      <button class="tab-button" id="tab-engagements" role="tab" aria-selected="false" aria-controls="engagements" data-tab="engagements">Engagements</button>
+    </nav>
+
+    <div class="header-actions">
+      <a class="icon-button" href="mailto:rashler0610@gmail.com" aria-label="Email Si Qi" title="Email">↗</a>
+      <button class="icon-button theme-toggle" type="button" aria-label="Toggle color theme" title="Toggle color theme">
+        <span class="theme-icon" aria-hidden="true">◐</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero reveal" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <div class="availability"><span></span> PhD Researcher · NTU Singapore</div>
+        <p class="hero-kicker">AI Safety · Machine Unlearning · Privacy</p>
+        <h1 id="hero-title">I build <em>measurable</em> ways to make AI safer.</h1>
+        <p class="hero-intro">My work studies how advanced AI systems can forget targeted information, resist harmful behaviour, preserve useful capabilities, and make safety guarantees more testable.</p>
+        <div class="hero-actions">
+          <button class="primary-action" type="button" data-jump="research">Explore my research <span aria-hidden="true">↘</span></button>
+          <a class="secondary-action" href="https://www.linkedin.com/in/gsq610" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+          <a class="secondary-action" href="https://github.com/gsq610" target="_blank" rel="noreferrer">GitHub ↗</a>
+        </div>
+      </div>
+
+      <div class="hero-visual" aria-label="Interactive map of research themes">
+        <div class="orbital-stage" id="orbital-stage">
+          <div class="orbit orbit-a"></div>
+          <div class="orbit orbit-b"></div>
+          <div class="orbit orbit-c"></div>
+          <button type="button" class="orbit-node node-unlearning is-selected" data-topic="unlearning"><span>01</span>Unlearning</button>
+          <button type="button" class="orbit-node node-agent" data-topic="agent"><span>02</span>Agent Safety</button>
+          <button type="button" class="orbit-node node-privacy" data-topic="privacy"><span>03</span>Privacy</button>
+          <button type="button" class="orbit-node node-risk" data-topic="risk"><span>04</span>Risk</button>
+          <div class="orbit-core" aria-hidden="true">
+            <span>TRUSTWORTHY</span>
+            <strong>AI</strong>
+            <small>Research</small>
+          </div>
+        </div>
+        <div class="topic-readout" aria-live="polite">
+          <span id="topic-number">01 / 04</span>
+          <div>
+            <strong id="topic-title">Machine Unlearning</strong>
+            <p id="topic-copy">Targeted forgetting with explicit control over retained utility and risk.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="stat-strip reveal" aria-label="Research profile summary">
+      <div><strong>AI Safety</strong><span>Core research area</span></div>
+      <div><strong>LLMs + Agents</strong><span>Primary systems</span></div>
+      <div><strong>Privacy</strong><span>Safety objective</span></div>
+      <div><strong>Risk-aware</strong><span>Evaluation philosophy</span></div>
+    </section>
+
+    <section class="workspace reveal" aria-label="Portfolio content">
+      <div class="workspace-topline">
+        <span class="workspace-label">Portfolio / <strong id="workspace-label">Research</strong></span>
+        <span class="keyboard-hint" aria-hidden="true">← → switch tabs</span>
+      </div>
+
+      <section class="tab-panel is-active" id="research" role="tabpanel" aria-labelledby="tab-research" tabindex="0">
+        <div class="section-intro">
+          <p class="eyebrow">01 · Research</p>
+          <h2>Forgetting is useful only when we can show <span>what changed—and what did not.</span></h2>
+          <p>I work across method design and evaluation, with an emphasis on measurable forgetting, retained utility, privacy risk, and robustness beyond a single benchmark condition.</p>
+        </div>
+
+        <div class="research-layout">
+          <div class="research-menu" role="list" aria-label="Research themes">
+            <button class="research-menu-item is-active" type="button" data-research="unlearning">
+              <span>01</span><div><strong>Machine Unlearning</strong><small>Targeted forgetting & utility preservation</small></div><b>↗</b>
+            </button>
+            <button class="research-menu-item" type="button" data-research="agent">
+              <span>02</span><div><strong>LLM & Agent Safety</strong><small>Behaviour, tools, leakage & control</small></div><b>↗</b>
+            </button>
+            <button class="research-menu-item" type="button" data-research="privacy">
+              <span>03</span><div><strong>Privacy-Preserving AI</strong><small>Encrypted inference & privacy safeguards</small></div><b>↗</b>
+            </button>
+            <button class="research-menu-item" type="button" data-research="risk">
+              <span>04</span><div><strong>Risk & Evaluation</strong><small>Benchmarks, uncertainty & guarantees</small></div><b>↗</b>
+            </button>
+          </div>
+
+          <article class="research-focus" id="research-focus" aria-live="polite">
+            <div class="focus-header"><span id="focus-index">01</span><small id="focus-meta">CORE DIRECTION</small></div>
+            <h3 id="focus-title">Machine Unlearning</h3>
+            <p id="focus-description">I study how to remove targeted information or behaviour from trained models without retraining from scratch, while preserving unrelated capabilities.</p>
+            <div class="focus-metrics" id="focus-metrics">
+              <div><small>Question A</small><strong>Did the target disappear?</strong></div>
+              <div><small>Question B</small><strong>Did utility survive?</strong></div>
+              <div><small>Question C</small><strong>Does it hold under shift?</strong></div>
+            </div>
+          </article>
+        </div>
+
+        <div class="subsection-bar">
+          <div><p class="eyebrow">Selected work</p><h3>Publications</h3></div>
+          <div class="publication-tools">
+            <label class="search-box"><span aria-hidden="true">⌕</span><input id="publication-search" type="search" placeholder="Search publications" aria-label="Search publications" /></label>
+            <div class="filter-pills" role="group" aria-label="Filter publications">
+              <button class="filter-pill is-active" type="button" data-pub-filter="all">All</button>
+              <button class="filter-pill" type="button" data-pub-filter="unlearning">Unlearning</button>
+              <button class="filter-pill" type="button" data-pub-filter="privacy">Privacy</button>
+              <button class="filter-pill" type="button" data-pub-filter="survey">Survey</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="publication-grid" id="publication-grid">
+          <article class="publication-card featured" data-category="unlearning" data-title="FROC A Unified Framework with Risk Optimized Control for Machine Unlearning in LLMs">
+            <button class="pub-open" type="button" data-publication="froc" aria-label="Open details for FROC"></button>
+            <div class="pub-top"><span class="pub-year">2026</span><span class="pub-tag">ICAIIC · IEEE</span></div>
+            <h4>FROC: A Unified Framework with Risk-Optimized Control for Machine Unlearning in LLMs</h4>
+            <p>A risk-control framework for choosing unlearning configurations under user-defined forgetting and utility requirements.</p>
+            <div class="pub-footer"><span>First author</span><strong>View details ↗</strong></div>
+          </article>
+
+          <article class="publication-card" data-category="survey" data-title="AI Safety Landscape for Large Language Models Taxonomy State of the Art and Future Directions">
+            <button class="pub-open" type="button" data-publication="safety" aria-label="Open details for AI Safety Landscape"></button>
+            <div class="pub-top"><span class="pub-year">2026</span><span class="pub-tag">AI Review</span></div>
+            <h4>AI Safety Landscape for Large Language Models: Taxonomy, State-of-the-Art, and Future Directions</h4>
+            <p>A comprehensive safety taxonomy spanning trustworthy, responsible, and ecosystem-level perspectives for LLMs.</p>
+            <div class="pub-footer"><span>Journal</span><strong>View details ↗</strong></div>
+          </article>
+
+          <article class="publication-card" data-category="privacy" data-title="Efficient FHE Based Privacy Enhanced Neural Network for Trustworthy AI as a Service">
+            <button class="pub-open" type="button" data-publication="fhe" aria-label="Open details for FHE paper"></button>
+            <div class="pub-top"><span class="pub-year">2024</span><span class="pub-tag">IEEE TDSC</span></div>
+            <h4>Efficient FHE-Based Privacy-Enhanced Neural Network for Trustworthy AI-as-a-Service</h4>
+            <p>Practical fully homomorphic encryption for privacy-preserving neural-network inference.</p>
+            <div class="pub-footer"><span>Journal</span><strong>View details ↗</strong></div>
+          </article>
+
+          <article class="publication-card" data-category="survey" data-title="From Prompts to Agents A Comprehensive Survey of LLM Driven Time Series Analysis">
+            <button class="pub-open" type="button" data-publication="timeseries" aria-label="Open details for time series survey"></button>
+            <div class="pub-top"><span class="pub-year">2025–26</span><span class="pub-tag">Survey</span></div>
+            <h4>From Prompts to Agents: A Comprehensive Survey of LLM-Driven Time Series Analysis</h4>
+            <p>Surveying the shift from prompt-based analysis toward agentic time-series workflows across more than 150 studies.</p>
+            <div class="pub-footer"><span>Co-first author</span><strong>View details ↗</strong></div>
+          </article>
+        </div>
+        <p class="empty-state" id="publication-empty" hidden>No publications match that search.</p>
+
+        <div class="current-work">
+          <div class="current-work-head">
+            <div><p class="eyebrow">Current directions</p><h3>What I am exploring now</h3></div>
+            <span class="live-badge"><i></i> Ongoing</span>
+          </div>
+          <div class="current-work-grid">
+            <article><span>01</span><h4>Robust multimodal unlearning</h4><p>Forgetting person–biography and other cross-modal associations in vision-language models, including under distribution shift.</p><div class="mini-flow"><b>Face</b><i>→</i><b>Association</b><i>✕</i><b>Biography</b></div></article>
+            <article><span>02</span><h4>Harmful behaviour removal in AI agents</h4><p>Separating behavioural removal from runtime enforcement and evaluating persistence, substitution, leakage, utility, and task success.</p><div class="mini-flow"><b>Model</b><i>→</i><b>Controller</b><i>→</i><b>Tool</b></div></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="tab-panel" id="experience" role="tabpanel" aria-labelledby="tab-experience" tabindex="0" hidden>
+        <div class="section-intro">
+          <p class="eyebrow">02 · Experience</p>
+          <h2>Research depth, applied engineering, and <span>community leadership.</span></h2>
+          <p>A combined view of academic training, research, industry work, teaching, and leadership.</p>
+        </div>
+
+        <div class="experience-grid">
+          <div class="experience-timeline" aria-label="Professional timeline">
+            <article class="experience-item is-open">
+              <button type="button" class="experience-toggle" aria-expanded="true">
+                <span class="experience-year">2023 — 2026</span>
+                <div><small>Nanyang Technological University · Singapore</small><h3>PhD Researcher · Trustworthy AI</h3></div><b>−</b>
+              </button>
+              <div class="experience-details"><p>Research on machine unlearning, LLM safety, privacy-preserving AI, harmful behaviour removal, and risk-aware evaluation. Proposed FROC and developed evaluation pipelines for tool-using agents.</p><div class="skill-row"><span>Machine Unlearning</span><span>LLMs</span><span>Agents</span><span>LoRA / PEFT</span></div></div>
+            </article>
+            <article class="experience-item">
+              <button type="button" class="experience-toggle" aria-expanded="false">
+                <span class="experience-year">2021 — 2022</span>
+                <div><small>Tau Express · Singapore</small><h3>Research & Development Engineer</h3></div><b>+</b>
+              </button>
+              <div class="experience-details" hidden><p>Developed a clause-recommendation system for legal documents and investigated fully homomorphic encryption across machine-learning applications.</p><div class="skill-row"><span>NLP</span><span>Legal AI</span><span>FHE</span></div></div>
+            </article>
+            <article class="experience-item">
+              <button type="button" class="experience-toggle" aria-expanded="false">
+                <span class="experience-year">2019 — 2020</span>
+                <div><small>MIMOS Berhad · Malaysia</small><h3>Junior Researcher</h3></div><b>+</b>
+              </button>
+              <div class="experience-details" hidden><p>Built an aggressive-behaviour detector for lockup surveillance and integrated CCTV, database, and motion-triggered alert workflows.</p><div class="skill-row"><span>Computer Vision</span><span>Surveillance AI</span><span>Systems</span></div></div>
+            </article>
+            <article class="experience-item">
+              <button type="button" class="experience-toggle" aria-expanded="false">
+                <span class="experience-year">2018 — 2020</span>
+                <div><small>Monash University · Malaysia / Australia</small><h3>Research Apprentice · Teaching & Research Assistant</h3></div><b>+</b>
+              </button>
+              <div class="experience-details" hidden><p>Worked on real-time facial-expression transfer, homomorphic cryptography research, cybersecurity teaching materials, and peer-assisted mathematics instruction.</p><div class="skill-row"><span>Computer Vision</span><span>Cryptography</span><span>Teaching</span></div></div>
+            </article>
+          </div>
+
+          <aside class="experience-side">
+            <div class="side-card education-card">
+              <p class="eyebrow">Education</p>
+              <div class="degree"><span>2023—26</span><strong>PhD, Computer Science</strong><small>Nanyang Technological University</small></div>
+              <div class="degree"><span>2017—20</span><strong>Bachelor of Computer Science (Honours)</strong><small>Monash University</small></div>
+            </div>
+            <div class="side-card leadership-card">
+              <p class="eyebrow">Leadership</p>
+              <ul>
+                <li><span>AY25/26</span><strong>President · CCDS Graduate Student Club</strong></li>
+                <li><span>2024—</span><strong>President · HeForShe NTU</strong></li>
+                <li><span>2023—</span><strong>Speaker Curation Lead · TEDxNTU</strong></li>
+                <li><span>2025—</span><strong>Community Lead · CresPion / HITS</strong></li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+
+        <div class="skills-cloud" aria-label="Technical expertise">
+          <div><p class="eyebrow">Technical stack</p><h3>Methods & tools</h3></div>
+          <div class="skill-cloud-items">
+            <span>Python</span><span>PyTorch</span><span>Hugging Face</span><span>LLMs</span><span>Machine Unlearning</span><span>LoRA / PEFT</span><span>DPO / NPO</span><span>Computer Vision</span><span>FHE</span><span>Conformal Risk</span><span>Git</span><span>LaTeX</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="tab-panel" id="engagements" role="tabpanel" aria-labelledby="tab-engagements" tabindex="0" hidden>
+        <div class="section-intro">
+          <p class="eyebrow">03 · Engagements</p>
+          <h2>Research is stronger when it travels <span>beyond the paper.</span></h2>
+          <p>Selected conferences, research communities, public-facing programmes, student leadership, and speaking or event roles.</p>
+        </div>
+
+        <div class="engagement-toolbar">
+          <div class="filter-pills" role="group" aria-label="Filter engagements">
+            <button class="filter-pill is-active" type="button" data-event-filter="all">All</button>
+            <button class="filter-pill" type="button" data-event-filter="conference">Conferences</button>
+            <button class="filter-pill" type="button" data-event-filter="leadership">Leadership</button>
+            <button class="filter-pill" type="button" data-event-filter="speaking">Speaking / Media</button>
+          </div>
+          <span class="result-count" id="event-count">6 engagements</span>
+        </div>
+
+        <div class="engagement-grid" id="engagement-grid">
+          <article class="engagement-card large" data-event="conference">
+            <div class="event-art art-conference"><span>NBC</span><small>2026</small></div>
+            <div class="event-copy"><div><span class="event-type">Conference</span><span>2026</span></div><h3>Nanyang Blockchain Conference</h3><p>Emcee, on-site interviews, speaker transitions, panel introductions, and programme hosting across the conference.</p></div>
+          </article>
+          <article class="engagement-card" data-event="leadership">
+            <div class="event-art art-gsc"><span>GSC</span><small>AY25/26</small></div>
+            <div class="event-copy"><div><span class="event-type">Leadership</span><span>2025–26</span></div><h3>CCDS Graduate Student Club</h3><p>President; led academic, career, welfare, and social initiatives across the graduate community.</p></div>
+          </article>
+          <article class="engagement-card" data-event="speaking">
+            <div class="event-art art-ted"><span>RE:</span><small>Human</small></div>
+            <div class="event-copy"><div><span class="event-type">Speaker Curation</span><span>2025</span></div><h3>TEDxNTU</h3><p>Proposed the RE:Human theme and led speaker selection, speech development, and cross-team event coordination.</p></div>
+          </article>
+          <article class="engagement-card" data-event="speaking">
+            <div class="event-art art-podcast"><span>HITS</span><small>Podcast</small></div>
+            <div class="event-copy"><div><span class="event-type">Media</span><span>2025–</span></div><h3>HITS Podcast</h3><p>Co-host and curator of research conversations connecting technical work with researchers' personal journeys.</p></div>
+          </article>
+          <article class="engagement-card" data-event="leadership">
+            <div class="event-art art-heforshe"><span>H4S</span><small>NTU</small></div>
+            <div class="event-copy"><div><span class="event-type">Leadership</span><span>2024–</span></div><h3>HeForShe NTU</h3><p>President; campus initiatives on gender equity and allyship through workshops, book circles, and panel discussions.</p></div>
+          </article>
+          <article class="engagement-card" data-event="conference">
+            <div class="event-art art-research"><span>AI</span><small>Safety</small></div>
+            <div class="event-copy"><div><span class="event-type">Research</span><span>2026</span></div><h3>Research Presentations & Reviews</h3><p>Conference presentations, research updates, technical reviews, and interdisciplinary discussions around trustworthy AI.</p></div>
+          </article>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <dialog class="publication-dialog" id="publication-dialog" aria-labelledby="dialog-title">
+    <button class="dialog-close" type="button" aria-label="Close publication details">×</button>
+    <div class="dialog-meta"><span id="dialog-year"></span><span id="dialog-venue"></span></div>
+    <h2 id="dialog-title"></h2>
+    <p class="dialog-authors" id="dialog-authors"></p>
+    <p id="dialog-description"></p>
+    <div class="dialog-links" id="dialog-links"></div>
+  </dialog>
+
+  <footer class="site-footer">
+    <div><span class="brand-mark" aria-hidden="true">SQ</span><strong>Si Qi Goh</strong></div>
+    <p>AI Safety · Machine Unlearning · Privacy · Trustworthy AI</p>
+    <span>© <span id="year"></span></span>
+  </footer>
+</body>
+</html>
