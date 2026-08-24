@@ -423,3 +423,25 @@ main { width: min(calc(100% - 28px), var(--max)); margin: 0 auto; }
     padding-top: 12px;
   }
 }
+
+
+/* ---------------------------------------------------------
+   Desktop opening composition
+   Keep scroll position at 0, but move the hero itself upward
+   so the initial viewport matches the desired second screenshot.
+   --------------------------------------------------------- */
+@media (min-width: 901px) {
+  .hero {
+    padding-top: 10px;
+  }
+}
+
+/* On shorter laptop displays, keep the same upward framing
+   while retaining the compact sizing from the earlier responsive rules. */
+@media (min-width: 901px) and (max-height: 920px) {
+  .hero {
+    min-height: 0;
+    padding-top: 10px;
+    padding-bottom: 28px;
+  }
+}
