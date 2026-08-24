@@ -445,3 +445,23 @@ main { width: min(calc(100% - 28px), var(--max)); margin: 0 auto; }
     padding-bottom: 28px;
   }
 }
+
+
+/* ---------------------------------------------------------
+   Final desktop hero alignment
+   The remaining top gap was caused by the grid vertically
+   centering the hero contents (align-items: center), not by
+   hero padding. Start-align the hero so the researcher badge
+   sits directly below the sticky header.
+   --------------------------------------------------------- */
+@media (min-width: 901px) {
+  .hero {
+    align-items: start;
+    padding-top: 10px;
+  }
+
+  /* Keep the orbital visual slightly lower for visual balance. */
+  .hero-visual {
+    padding-top: 28px;
+  }
+}
