@@ -426,39 +426,13 @@ main { width: min(calc(100% - 28px), var(--max)); margin: 0 auto; }
 
 
 /* ---------------------------------------------------------
-   Desktop opening composition
-   Keep scroll position at 0, but move the hero itself upward
-   so the initial viewport matches the desired second screenshot.
+   Initial laptop framing — matches the user's reference screenshot.
+   Preserve the original hero proportions/spacing and move the entire
+   hero section upward as one unit. This avoids compressing the internal
+   spacing between the researcher badge, kicker, headline and diagram.
    --------------------------------------------------------- */
-@media (min-width: 901px) {
-  .hero {
-    padding-top: 10px;
-  }
-}
-
-/* On shorter laptop displays, keep the same upward framing
-   while retaining the compact sizing from the earlier responsive rules. */
 @media (min-width: 901px) and (max-height: 920px) {
   .hero {
-    min-height: 0;
-    padding-top: 10px;
-    padding-bottom: 28px;
-  }
-}
-
-
-/* ---------------------------------------------------------
-   Final desktop hero alignment
-   Match the requested screenshot: a small, deliberate gap
-   below the sticky header without the large original whitespace.
-   --------------------------------------------------------- */
-@media (min-width: 901px) {
-  .hero {
-    align-items: start;
-    padding-top: 16px;
-  }
-
-  .hero-visual {
-    padding-top: 36px;
+    margin-top: -105px;
   }
 }
