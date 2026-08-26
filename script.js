@@ -262,50 +262,48 @@ if (window.matchMedia('(pointer:fine)').matches && !window.matchMedia('(prefers-
 
 
 
-/* Engagement photo carousels --------------------------------- */
-document.querySelectorAll('[data-carousel]').forEach((carousel) => {
-  const slides = [...carousel.querySelectorAll('.carousel-slide')];
-  const counter = carousel.querySelector('.carousel-hint b');
+/* Engagement hover photo galleries ------------------------- */
+document.querySelectorAll('[data-carousel]').forEach((gallery) => {
+  const photos = [...gallery.querySelectorAll('.event-photo')];
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
   let current = 0;
   let timer = null;
 
-  if (slides.length < 2) return;
+  if (!photos.length) return;
 
-  function showSlide(index) {
-    slides.forEach((slide, i) => slide.classList.toggle('is-active', i === index));
+  function showPhoto(index) {
+    photos.forEach((photo, i) => photo.classList.toggle('is-active', i === index));
     current = index;
-    if (counter) counter.textContent = index === 0 ? `01 / ${slides.length - 1}` : `${String(index).padStart(2, '0')} / ${String(slides.length - 1).padStart(2, '0')}`;
   }
 
-  function startCarousel() {
-    if (timer) return;
-    carousel.classList.add('is-playing');
-    showSlide(1);
-    if (reduceMotion || slides.length <= 2) return;
+  function startGallery() {
+    if (gallery.classList.contains('is-playing')) return;
+    gallery.classList.add('is-playing');
+    showPhoto(0);
+
+    if (reduceMotion || photos.length < 2) return;
     timer = setInterval(() => {
-      const next = current >= slides.length - 1 ? 1 : current + 1;
-      showSlide(next);
+      showPhoto((current + 1) % photos.length);
     }, 1700);
   }
 
-  function stopCarousel() {
+  function stopGallery() {
     if (timer) clearInterval(timer);
     timer = null;
-    carousel.classList.remove('is-playing');
-    showSlide(0);
+    gallery.classList.remove('is-playing');
+    showPhoto(0);
   }
 
   if (finePointer) {
-    carousel.addEventListener('mouseenter', startCarousel);
-    carousel.addEventListener('mouseleave', stopCarousel);
-    carousel.addEventListener('focus', startCarousel);
-    carousel.addEventListener('blur', stopCarousel);
+    gallery.addEventListener('mouseenter', startGallery);
+    gallery.addEventListener('mouseleave', stopGallery);
+    gallery.addEventListener('focus', startGallery);
+    gallery.addEventListener('blur', stopGallery);
   } else {
-    carousel.addEventListener('click', () => {
-      if (carousel.classList.contains('is-playing')) stopCarousel();
-      else startCarousel();
+    gallery.addEventListener('click', () => {
+      if (gallery.classList.contains('is-playing')) stopGallery();
+      else startGallery();
     });
   }
 });

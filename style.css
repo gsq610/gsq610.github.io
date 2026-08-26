@@ -398,107 +398,54 @@ main { width: min(calc(100% - 28px), var(--max)); margin: 0 auto; }
 
 
 /* =========================================================
-   Engagement photo carousel
-   The original visual card remains the exact resting cover.
-   Hover/focus reveals and cycles through event photos.
+   Engagement hover photo carousel
+   IMPORTANT: the original .event-art UI is untouched at rest.
+   Photos are a hidden overlay that appears only on hover/focus.
    ========================================================= */
-.event-carousel {
-  position: relative;
-  min-height: 190px;
-  padding: 0;
-  background: var(--surface-2);
-  overflow: hidden;
+.event-gallery {
   isolation: isolate;
-  cursor: pointer;
 }
 
-/* The decorative rings belong to the original cover layer now. */
-.event-carousel::after { display: none; }
-.engagement-card.large .event-carousel { min-height: 100%; }
+.event-photo-layer {
+  position: absolute;
+  z-index: 4;
+  inset: 0;
+  overflow: hidden;
+  background: var(--surface-2);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .38s ease;
+}
 
-/* Shared stacked layer for original cover + photos. */
-.carousel-slide {
+.event-gallery.is-playing .event-photo-layer {
+  opacity: 1;
+}
+
+.event-photo {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
-  opacity: 0;
-  transition: opacity .48s ease;
-  pointer-events: none;
-}
-.carousel-slide.is-active { opacity: 1; }
-
-/* Recreates the original event-art visual exactly at rest. */
-.event-cover {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 22px;
-  background: var(--surface-2);
-  overflow: hidden;
-}
-.event-cover::after {
-  content: "";
-  position: absolute;
-  width: 170px;
-  height: 170px;
-  right: -45px;
-  bottom: -70px;
-  border: 1px solid currentColor;
-  border-radius: 50%;
-  opacity: .16;
-  box-shadow: 0 0 0 35px currentColor, 0 0 0 70px currentColor;
-}
-
-/* Real/filler photos only appear once the carousel starts. */
-.event-slide {
   object-fit: cover;
-  transform: scale(1.035);
-  transition: opacity .48s ease, transform 1.4s cubic-bezier(.2,.8,.2,1);
-}
-.event-slide.is-active { transform: scale(1); }
-
-/* Hidden at rest so the cover looks exactly like the old design. */
-.carousel-hint {
-  position: absolute;
-  z-index: 3;
-  left: 14px;
-  right: 14px;
-  bottom: 14px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 10px;
-  padding: 8px 10px;
-  border: 1px solid rgba(255,255,255,.22);
-  border-radius: 11px;
-  background: rgba(10,10,10,.42);
-  backdrop-filter: blur(10px);
-  color: #fff;
-  font-size: .64rem;
-  font-weight: 750;
-  letter-spacing: .035em;
   opacity: 0;
-  transform: translateY(5px);
-  transition: opacity .22s ease, transform .22s ease;
-  pointer-events: none;
+  transform: scale(1.025);
+  transition: opacity .48s ease, transform 1.35s cubic-bezier(.2,.8,.2,1);
 }
-.carousel-hint b { font-size: .6rem; font-weight: 800; opacity: .82; }
-.event-carousel.is-playing .carousel-hint {
+
+.event-photo.is-active {
   opacity: 1;
-  transform: none;
+  transform: scale(1);
 }
-.event-carousel.is-playing .carousel-hint span { opacity: .72; }
-.event-carousel:focus-visible {
+
+.event-gallery:focus-visible {
   outline: 3px solid color-mix(in srgb, var(--accent) 45%, transparent);
   outline-offset: -3px;
 }
 
-@media (max-width: 760px) {
-  .engagement-card.large .event-carousel { min-height: 220px; }
-  .carousel-hint span::after { content: " / tap to close"; }
-}
-
 @media (prefers-reduced-motion: reduce) {
-  .carousel-slide, .event-slide { transition: none; transform: none; }
+  .event-photo-layer,
+  .event-photo {
+    transition: none;
+  }
+  .event-photo { transform: none; }
 }
