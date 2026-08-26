@@ -388,10 +388,80 @@ main { width: min(calc(100% - 28px), var(--max)); margin: 0 auto; }
 /* ---------------------------------------------------------
    Reference opening position
    Preserve the original hero design exactly and shift the
-   whole hero upward by 105 CSS px on laptop-height desktops.
+   whole hero upward slightly on laptop-height desktops.
    --------------------------------------------------------- */
 @media (min-width: 1051px) and (max-height: 920px) {
   .hero {
-    margin-top: -85px;
+    margin-top: -10px;
   }
+}
+
+
+/* =========================================================
+   Engagement photo carousel
+   Cover is shown at rest. Hover/focus cycles event photos.
+   Replace files in assets/engagements/ while keeping names.
+   ========================================================= */
+.event-carousel {
+  position: relative;
+  min-height: 190px;
+  padding: 0;
+  background: var(--surface-2);
+  overflow: hidden;
+  isolation: isolate;
+  cursor: default;
+}
+.event-carousel::after { display: none; }
+.engagement-card.large .event-carousel { min-height: 100%; }
+.event-slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transform: scale(1.035);
+  transition: opacity .48s ease, transform 1.4s cubic-bezier(.2,.8,.2,1);
+  pointer-events: none;
+}
+.event-slide.is-active {
+  opacity: 1;
+  transform: scale(1);
+}
+.carousel-hint {
+  position: absolute;
+  z-index: 3;
+  left: 14px;
+  right: 14px;
+  bottom: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  border: 1px solid rgba(255,255,255,.22);
+  border-radius: 11px;
+  background: rgba(10,10,10,.42);
+  backdrop-filter: blur(10px);
+  color: #fff;
+  font-size: .64rem;
+  font-weight: 750;
+  letter-spacing: .035em;
+  transition: opacity .22s ease, transform .22s ease;
+}
+.carousel-hint b { font-size: .6rem; font-weight: 800; opacity: .82; }
+.event-carousel.is-playing .carousel-hint span { opacity: .72; }
+.event-carousel:focus-visible { outline: 3px solid color-mix(in srgb, var(--accent) 45%, transparent); outline-offset: -3px; }
+
+@media (hover: hover) and (pointer: fine) {
+  .event-carousel:hover .carousel-hint { transform: translateY(1px); }
+}
+
+@media (max-width: 760px) {
+  .engagement-card.large .event-carousel { min-height: 220px; }
+  .carousel-hint span::after { content: " / tap"; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .event-slide { transition: none; transform: none; }
 }
