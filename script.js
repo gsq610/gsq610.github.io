@@ -264,7 +264,7 @@ if (window.matchMedia('(pointer:fine)').matches && !window.matchMedia('(prefers-
 
 /* Engagement photo carousels --------------------------------- */
 document.querySelectorAll('[data-carousel]').forEach((carousel) => {
-  const slides = [...carousel.querySelectorAll('.event-slide')];
+  const slides = [...carousel.querySelectorAll('.carousel-slide')];
   const counter = carousel.querySelector('.carousel-hint b');
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;

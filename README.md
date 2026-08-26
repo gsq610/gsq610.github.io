@@ -18,3 +18,18 @@ Recommended image ratio: landscape, around 3:2 or 16:10. `object-fit: cover` wil
 
 Desktop: hover over the image area to start the carousel; moving the mouse away returns to the cover.
 Touch devices: tap the image area to start/stop.
+
+
+## Engagement carousel v2
+
+The resting cover is now the original graphic visual (NBC / GSC / TEDx / HITS / H4S / AI Safety), not a photo. Hovering the visual area cycles through three photos and leaving returns to the original graphic.
+
+Replace only these files in `assets/engagements/` while keeping the names lowercase:
+- `nbc-1.jpg`, `nbc-2.jpg`, `nbc-3.jpg`
+- `gsc-1.jpg`, `gsc-2.jpg`, `gsc-3.jpg`
+- `tedx-1.jpg`, `tedx-2.jpg`, `tedx-3.jpg`
+- `hits-1.jpg`, `hits-2.jpg`, `hits-3.jpg`
+- `heforshe-1.jpg`, `heforshe-2.jpg`, `heforshe-3.jpg`
+- `research-1.jpg`, `research-2.jpg`, `research-3.jpg`
+
+No `*-cover.jpg` files are needed.
